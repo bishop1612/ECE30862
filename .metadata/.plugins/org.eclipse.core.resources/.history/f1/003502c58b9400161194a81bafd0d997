@@ -1,0 +1,21 @@
+
+public class multiplythread extends Thread{
+	static int [][] C;
+	private int rowS;
+    private int rowE;
+    private int colS;
+    private int colE;
+	
+	public multiplythread(int rstart,int rend, int cstart,int cend) {
+		rowS = rstart;
+		rowE = rend;
+		colS = cstart;
+		colE = cend;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

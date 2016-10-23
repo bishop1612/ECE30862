@@ -1,0 +1,68 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class multiply {
+	private static int N;
+
+	public multiply(int n) throws Exception{
+		if(n%2!=0) {
+			throw new Exception();
+		}
+		N = n;
+		// TODO Auto-generated constructor stub
+	}
+	
+	public int[][] formmatrix() {
+		Random randomGenerator = new Random();
+		int [][] formmatrix = new int[N][N];
+		int i,j = 0;
+		for(i = 0;i < N;i++){
+			for(j = 0;j < N;j++){
+				formmatrix[i][j] = randomGenerator.nextInt(100);
+			}
+		}
+		return formmatrix;
+		
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	public static void main(String[] args) {
+		int [][] B;
+		int [][] C;
+		// TODO Auto-generated method stub
+		boolean changed = false;
+		Scanner reader = new Scanner(System.in);  // Reading from System.in
+		System.out.println("Enter a number: ");
+		int n = reader.nextInt();// Scans the next token of the input as an int.
+		while(true) {
+            try {
+                changed = false;
+                multiply mp = new multiply(n);
+                B = mp.formmatrix();
+        		C = mp.formmatrix();
+    
+            } catch (Exception e) {
+                System.out.print(n + " is an unacceptable value of N, please enter a new value: ");
+
+                n = reader.nextInt();
+                changed = true;
+            }
+
+            if(!changed) {
+                break;
+            }
+        }
+		
+		
+		/*int i,j = 0;
+		for(i = 0;i < N;i++){
+			for(j = 0;j < N;j++){
+				System.out.println(B[i][j] + " " + C[i][j]);
+			}
+		}
+		reader.close();*/
+
+	}
+
+}

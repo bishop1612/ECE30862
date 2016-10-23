@@ -1,0 +1,35 @@
+
+public class multiplythread extends Thread{
+	static int [][] C;
+	private int rowS;
+    private int rowE;
+    private int colS;
+    private int colE;
+	
+	public multiplythread(int rstart,int rend, int cstart,int cend) {
+		rowS = rstart;
+		rowE = rend;
+		colS = cstart;
+		colE = cend;
+	}
+	
+	public void run(){
+        //long execution_time= mul();
+		
+		int i,j,k,sum=0;
+
+        for(i=rowS;i<rowE;i++){
+            for(j=colS;j<colE;j++){
+                for(k=0;k<N;k++){
+                    //if(instanceName!="topRows")
+                    sum = sum + B[i][k]*C[k][j];
+                }
+                A[i][j] = sum;
+                sum = 0;
+            }
+        }
+
+        System.out.println("Mul() for thread:" + Thread.currentThread().getId() + " took " + execution_time + " milliseconds");
+    }
+
+}
