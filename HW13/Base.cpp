@@ -1,14 +1,12 @@
-#include "Base.h"
+#include "mammal.h"
 
-Base::Base( ) : privB(1), protB(2), publicB(3) {  }
+//mammal::mammal() {  }
 
-Base::~Base( ) { }
+mammal::~mammal( ) { }
 
-void Base::print( ) {
-   cout << "Base" << endl;
-   cout << "privB: " << privB;
-   cout << ", protB: " << protB;
-   cout << ", publicB: " << publicB; 
-   cout << endl << endl;
+void mammal::getlegs( ) {
+   cout << "Enter no. of legs" << endl;
+   cin >> legs;
+  
 }
 
